@@ -10,16 +10,28 @@ function formula(a, b, c) {
 formula(arr[0], arr[1], arr[2]);
 console.log(arr);
 console.log(answer);
-
+playerPoints = 10;
 
 // player changer
 turnChange = true;
 console.log(turnChange);
 
+playerOne = {
+  startPoints = 10;
+};
+
+playerTwo = {
+  startPoints = 10;
+};
+
+//user prompt and input
 var userSolution = prompt("what is " + arr[0] + ' * ' + arr[1] + " + " + arr[2] );
 console.log(userSolution);
 while (userSolution != answer) {
   var userSolution = prompt("what is " + arr[0] + ' * ' + arr[1] + " + " + arr[2] );
-
-}
+   -= 1;
+} {
 alert("Correct!")
+}
+
+console.log("player points left: " + playerPoints);

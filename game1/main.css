@@ -1,0 +1,100 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(12, 221, 221, 0.25);
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 55px;
+  height:80px;
+  width: 700px;
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: lightgrey;
+}
+
+.player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  border: ;
+  height: 65px;
+  width: 500px;
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 35px;
+  background-color: lightgrey;
+}
+
+.formula {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  border: ;
+  height: 65px;
+  width: 500px;
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 35px;
+  background-color: lightgrey;
+}
+
+.output {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  border: ;
+  height: 65px;
+  width: 500px;
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 35px;
+  background-color: lightgrey;
+}
+
+.scores {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  align-items: center;
+  height: 350px;
+  width: 700px;
+}
+
+.playerOne {
+  display: flex;
+  justify-content: center;
+
+  flex-direction: row;
+  font-size: 35px;
+  border: ;
+  height: 300px;
+  width: 300px;
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 35px;
+  background-color: lightgrey;
+}
+
+.playerTwo {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 35px;
+  border: ;
+  height: 300px;
+  width: 300px;
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 35px;
+  background-color: lightgrey;
+}
