@@ -1,0 +1,21 @@
+Over the falls math game:
+
+Have an Math.random function that will plug in numbers to randomized/maybe one formulas.
+Amount of time it takes to solve the problem, the player moves the character down the river.
+Once player reaches edge of the falls that player looses and falls down the waterfall.
+
+Example
+
+function getRandomInt(max, min) {
+  return Math.floor(Math.random() * (max - min)) + min;
+};
+
+var a = getRandomInt(10, 1);
+var b = getRandomInt(10, 1);
+var c = getRandomInt(10, 1);
+
+function formula(a, b, c){
+var answer = a * b + c;
+  console.log(answer);
+}
+formula(a, b, c);
