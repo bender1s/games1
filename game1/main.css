@@ -4,7 +4,6 @@ body{
   align-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(12, 221, 221, 0.25);
 }
 header {
   display: flex;
@@ -18,7 +17,7 @@ header {
   background-color: lightgrey;
 }
 
-}
+
 #player-tag {
   display: flex;
   justify-content: center;
@@ -32,7 +31,6 @@ header {
   margin: 5px;
   background-color: lightgrey;
 }
-
 
 #formula {
   display: flex;
@@ -70,6 +68,16 @@ header {
   align-items: center;
   height: 350px;
   width: 700px;
+}
+button {
+background-color: #4CAF50; /* Green */
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
 }
 
 #player-one {

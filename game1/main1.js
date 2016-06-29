@@ -19,33 +19,36 @@ formula(arr[0], arr[1], arr[2]);
   console.log(answer);
 };
 
-//Individual rounds
-function rounds() {
-if (turn == true) {
-var userSolution = prompt("what is " + arr[0] + ' * ' + arr[1] + " + " + arr[2] );
-while (userSolution != answer) {
-  var userSolution = prompt("what is " + arr[0] + ' * ' + arr[1] + " + " + arr[2] );
-  playerOne -= 1;
-} {
-alert("Correct!")
-console.log("playerone Score: " + playerOne);
-   randomizer();
- turn = false;
-}
-};
+// function rounds() {
+ if (turn == true) {
+var userSolution = prompt(`what is: ${arr[0]} * ${arr[1]} + ${arr[2]} `);
+while (userSolution != answer)
 
-if (turn == false) {
-var userSolution = prompt("what is " + arr[0] + ' * ' + arr[1] + " + " + arr[2] );
-while (userSolution != answer) {
-  var userSolution = prompt("what is " + arr[0] + ' * ' + arr[1] + " + " + arr[2] );
-  playerTwo -= 1;
-} {
-alert("Correct!")
-console.log("playterTwo Score:" + playerTwo);
-  randomizer();
- turn = true;
-}
-}};
+{
+   var userSolution = prompt(`what is: ${arr[0]} * ${arr[1]} + ${arr[2]} `);
+   playerOne -= 1;
+ } {
+ ("Correct!")
+ console.log("playerone Score: " + playerOne);
+    randomizer();
+  turn = false;
+ }
+ console.log(arr);
+ }
+
+
+
+ if (turn == false) {
+ var userSolution = prompt(`what is: ${arr[0]} * ${arr[1]} + ${arr[2]} `);
+ while (userSolution != answer) {
+   var userSolution = prompt(`what is: ${arr[0]} * ${arr[1]} + ${arr[2]} `);
+   playerTwo -= 1;
+ } {
+ ("Correct!")
+ console.log("playterTwo Score:" + playerTwo);
+    randomizer();
+  turn = true;
+ }
 rounds();
 
 if (playerOne && playerTwo >= 1) {
