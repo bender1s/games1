@@ -9,9 +9,10 @@ var playerTwo = 10;
 //var value = [];
 var collectGuess = [];
 
-
-
-
+function refresh () {
+  arr = [];
+  answer = [];
+}
 
 // This creates random numbered array- plugs into formula -spits out result
 function randomizer(min, max) {
@@ -23,25 +24,16 @@ function formula(a, b, c) {
   answer.push(a * b + c);
 }
 
-// randomizer(0, 10);
-// formula(arr[0], arr[1], arr[2]);
-// console.log(arr);
-// console.log(answer);
-
 var playerChange = document.getElementById('player-tag');
 var formulaChange = document.getElementById('formula');
 var correctAnswer = document.getElementById('output');
-var playerOneScore = document.getElementsByClassName('player-one');
-var playerTwoScore = document.getElementsByClassName('player-two');
+var playerOneScore = document.getElementById('player-one');
+var playerTwoScore = document.getElementById('player-two');
 var collectGuess = document.getElementById('user-input').value;
-
-// document.getElementById('player-tag').addEventListener('click', function(event){
-//   playerChange.innerText = "newtexthere"
-// });
 
 document.getElementById('player-tag').addEventListener('click', function(event){
    start();
- });
+});
 
 document.getElementById("select").addEventListener("keyup", function(event) {
     event.preventDefault();
@@ -54,62 +46,64 @@ document.getElementById("select").addEventListener("keyup", function(event) {
 
 
 function start() {
-  console.log('starting game');
-  randomizer(0, 10);
-  formula(arr[0], arr[1], arr[2]);
   playerUno();
 }
 
 function playerUno(){
-  playerChange.innerText = "Player 1 Turn"
-  formulaChange.innerText = `${arr[0]} x ${arr[1]} + ${arr[2]}`
+  randomizer(0, 10);
+  formula(arr[0], arr[1], arr[2]);
+  console.log(answer);
+  playerChange.innerText = "Player 1 Turn";
+  formulaChange.innerText = `${arr[0]} x ${arr[1]} + ${arr[2]}`;
   clickListen();
   function clickListen () {
     document.getElementById('user-input').addEventListener('keyup', function (e) {
       if (event.keyCode == 13) {
-
-      nextstep();
-    }
-    });
+        nextstep();
+        }
+      });
       function nextstep () {
-        if (answer == collectGuess) {
-          correctAnswer.innerText = "Correct!"
+        parseInt(collectGuess, 10);
+        if (answer === collectGuess) {
           console.log("correct");
+          refresh();
           playerDos();
             }
-            correctAnswer.innerText = "Wrong! Try again!"
             console.log("you fuck");
             playerOne -= 1;
-            console.log(playerOne);
-}
-}
-}
-// function playerDos(){
-//   playerChange.innerText = "Player 2 Turn"
-//   formulaChange.innerText = `${arr[0]} x ${arr[1]} + ${arr[2]}`
-//   clickListen();
-//   function clickListen () {
-//     document.getElementById('user-input').addEventListener('keyup', function (e) {
-//       if (event.keyCode == 13) {
-//       nextstep();
-//     }
-//     });
-//       function nextstep () {
-//         if (answer == collectGuess) {
-//           correctAnswer.innerText = "Correct!"
-//           console.log("correct");
-//           playerDos();
-//             }
-//             correctAnswer.innerText = "Wrong! Try again!"
-//
-//             console.log("you fuck");
-//             playerOne -= 1;
-//             console.log(playerOne);
-// }
-// }
-// }
+             playerOneScore.innerText = playerOne;
 
+        }
+    }
+};
 
+function playerDos(){
+  randomizer(0, 10);
+  formula(arr[0], arr[1], arr[2]);
+  console.log(answer);
+  playerChange.innerText = "Player 2 Turn";
+  formulaChange.innerText = `${arr[0]} x ${arr[1]} + ${arr[2]}`;
+  clickListen();
+  function clickListen () {
+    document.getElementById('user-input').addEventListener('keyup', function (e) {
+      if (event.keyCode == 13) {
+        nextstep();
+        }
+      });
+      function nextstep () {
+        parseInt(collectGuess, 10);
+        if (answer === collectGuess) {
+          console.log("correct");
+          refresh();
+          start();
+            }
+            console.log("you fuck");
+            playerDos -= 1;
+             playerTwoScore.innerText = playerTwo;
+
+        }
+    }
+}
 
 
 

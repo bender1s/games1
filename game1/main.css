@@ -50,21 +50,6 @@ header {
   color: white;
 }
 
-#output {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 45px;
-  border: ;
-  height: 65px;
-  width: 500px;
-  border: 3px solid black;
-  border-radius: 10px;
-  margin: 5px;
-  background-color: rgba(0, 65, 153, 0.5);
-  color: white;
-}
-
 #user-input {
   border: 3px solid gold;
 }
@@ -73,7 +58,7 @@ header {
   display: flex;
   justify-content: center;
   align-content: center;
-  flex-direction: row;
+
   align-items: center;
   height: 350px;
   width: 700px;
@@ -90,11 +75,10 @@ font-size: 16px;
 color: white;
 }
 
-#player-one {
+#player-on {
   display: flex;
   justify-content: center;
-
-  flex-direction: row;
+  flex-direction: column;
   font-size: 35px;
   border: ;
   height: 300px;
@@ -106,10 +90,10 @@ color: white;
   color: white;
 }
 
-#player-two {
+#player-tw {
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   color: white;
   font-size: 35px;
   border: ;
@@ -118,5 +102,25 @@ color: white;
   border: 3px solid black;
   border-radius: 10px;
   margin: 35px;
-  background-color: rgba(0, 65, 153, 0.5);;
+  background-color: rgba(0, 65, 153, 0.5);
 }
+
+#player-one {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  color: white;
+  font-size: 100px;
+  margin: 35px;
+
+}
+
+  #player-two {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    color: white;
+    font-size: 100px;
+    margin: 35px;
+
+  }
