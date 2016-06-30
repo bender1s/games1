@@ -116,11 +116,52 @@ function nextstepTwo () {
     }
 }
 
+/////////////////////////////////////////////////////////////////////////////
 
-// if (playerOne && playerTwo >= 1) {
-//
-//   } else if (playerOne === 0) {
-//    console.log("Player 2 wins!");
-//     } else {
-//    console.log("player 1 wins!");
-//  }
+function beginLoops (){
+console.log("Game Starting");
+console.log("Player 1 Turn");
+console.log("The answer is: " + answer);
+
+document.getElementById("select").addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode == 13) {
+      collectGuess = parseInt(this.value);
+      this.value = '';
+      console.log(collectGuess);
+      console.log(turn);
+
+
+function pOneFun () {
+    playerChange.innerText = "Player 1 Turn"
+  if (answer[0] === collectGuess) {
+  console.log("Correct Answer!");
+  refresh();
+  turn = false;
+    } else if (answer[0] != collectGuess) {
+       playerOne =  playerOne - 1;
+        playerOneScore.innerText = playerOne;
+        console.log("things");
+        turn = true;
+        console.log(turn);
+        beginLoops();
+}
+
+}
+} else if (turn === false) {                        //Player Two
+  playerChange.innerText = "Player 2 Turn"
+  if (answer[0] === collectGuess) {
+  console.log("Correct Answer!");
+  refresh();
+  turn = true;
+    } else if (answer[0] != collectGuess) {
+             playerTwo = playerTwo - 1;
+            playerOneScore.innerText = playerTwo;
+              console.log("Incorrect");
+              turn = false;
+              console.log(turn);
+              beginLoops();
+              }
+}
+})
+}
