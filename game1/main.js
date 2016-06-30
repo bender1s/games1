@@ -39,12 +39,19 @@ document.getElementById("select").addEventListener("keyup", function(event) {
       collectGuess = parseInt(this.value);
       this.value = '';
       console.log("Correct Answer is: " + answer);
-if (turn == true) {
+if (turn === true) {
+  pOneTurn();
+} else if (turn === false) {
+  pTwoTurn();
+}
+
+function pOneTurn() {
   console.log("player 1 turn");
-  playerChange.innerText = "Player 1 Turn"
+  
     if (answer[0] === collectGuess) {
         console.log("Correct Answer!");
         turn = false;
+        playerChange.innerText = "Player 2 Turn"
         start();
         } else if (answer[0] != collectGuess) {
            playerOne -= 1;
@@ -53,13 +60,15 @@ if (turn == true) {
             turn = true;
             console.log(turn);
 }
-if (turn == false) {
+}
+function pTwoTurn(){
   console.log("player 2 turn");
-  playerChange.innerText = "Player 2 Turn"
+
   if (answer[0] === collectGuess) {
       console.log("Correct Answer!");
       turn = true;
       console.log(turn);
+      playerChange.innerText = "Player 1 Turn"
       start();
       } else if (answer[0] != collectGuess) {
          playerTwo -= 1;
@@ -67,11 +76,11 @@ if (turn == false) {
           console.log("things");
           turn = false;
           console.log(turn);
-}
-}
+        }
 }
 }
 })
+
 document.getElementById('player-tag').addEventListener('click', function(event){
   playerChange.innerText = "Player 1 Turn"
    start();
