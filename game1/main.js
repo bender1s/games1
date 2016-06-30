@@ -69,7 +69,7 @@ function playerUno(){
           refresh();
           playerDos();
             }
-            console.log("you fuck");
+            console.log("Wrong");
             playerOne -= 1;
              playerOneScore.innerText = playerOne;
 
@@ -97,7 +97,7 @@ function playerDos(){
           refresh();
           start();
             }
-            console.log("you fuck");
+            console.log("Wrong");
             playerDos -= 1;
              playerTwoScore.innerText = playerTwo;
 
@@ -105,14 +105,10 @@ function playerDos(){
     }
 }
 
-
-
-
- // if (playerOne && playerTwo >= 1) {
- //
- // } else if (playerOne == 0) {
- //   console.log("Player 2 wins!");
- // } else {
- //   console.log("player 1 wins!");
- // }
- //
+// if (playerOne && playerTwo >= 1) {
+//
+//   } else if (playerOne === 0) {
+//    console.log("Player 2 wins!");
+//     } else {
+//    console.log("player 1 wins!");
+//  }
