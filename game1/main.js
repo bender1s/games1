@@ -4,9 +4,14 @@
 //Math formula game
 var arr = [];
 var answer = [];
-var turn = false;
 var playerOne = 10;
 var playerTwo = 10;
+//var value = [];
+var collectGuess = [];
+
+
+
+
 
 // This creates random numbered array- plugs into formula -spits out result
 function randomizer(min, max) {
@@ -18,10 +23,10 @@ function formula(a, b, c) {
   answer.push(a * b + c);
 }
 
-randomizer(0, 10);
-formula(arr[0], arr[1], arr[2]);
-console.log(arr);
-console.log(answer);
+// randomizer(0, 10);
+// formula(arr[0], arr[1], arr[2]);
+// console.log(arr);
+// console.log(answer);
 
 var playerChange = document.getElementById('player-tag');
 var formulaChange = document.getElementById('formula');
@@ -34,47 +39,79 @@ var collectGuess = document.getElementById('user-input').value;
 //   playerChange.innerText = "newtexthere"
 // });
 
-// function runScript(e) {
-//     if (e.keyCode == 13) {
-//         var tb = document.getElementById("userInput");
-//         console.log("test");
-//         // eval(tb.value);
-//         var tb = tb.parse;
-//         return false;
-//     }
-// }
+document.getElementById('player-tag').addEventListener('click', function(event){
+   start();
+ });
 
-document.getElementById("select")
-    .addEventListener("keyup", function(event) {
+document.getElementById("select").addEventListener("keyup", function(event) {
     event.preventDefault();
-    if (event.keyCode == 13) {
-      //  document.getElementById("select").click();
+      if (event.keyCode == 13) {
         console.log(this.value);
-        this.value = "";
+        collectGuess = this.value;
+        this.value = '';
     }
 });
 
 
 function start() {
   console.log('starting game');
-  turn = true;
-  playGame();
+  randomizer(0, 10);
+  formula(arr[0], arr[1], arr[2]);
+  playerUno();
 }
-start();
-function playGame(){
-  if (turn) {
-    formulaChange.innerText = "hello"
-  }
+
+function playerUno(){
   playerChange.innerText = "Player 1 Turn"
   formulaChange.innerText = `${arr[0]} x ${arr[1]} + ${arr[2]}`
+  clickListen();
+  function clickListen () {
+    document.getElementById('user-input').addEventListener('keyup', function (e) {
+      if (event.keyCode == 13) {
 
+      nextstep();
+    }
+    });
+      function nextstep () {
+        if (answer == collectGuess) {
+          correctAnswer.innerText = "Correct!"
+          console.log("correct");
+          playerDos();
+            }
+            correctAnswer.innerText = "Wrong! Try again!"
+            console.log("you fuck");
+            playerOne -= 1;
+            console.log(playerOne);
 }
-
-// function userInput() {
+}
+}
+// function playerDos(){
+//   playerChange.innerText = "Player 2 Turn"
+//   formulaChange.innerText = `${arr[0]} x ${arr[1]} + ${arr[2]}`
+//   clickListen();
+//   function clickListen () {
+//     document.getElementById('user-input').addEventListener('keyup', function (e) {
+//       if (event.keyCode == 13) {
+//       nextstep();
+//     }
+//     });
+//       function nextstep () {
+//         if (answer == collectGuess) {
+//           correctAnswer.innerText = "Correct!"
+//           console.log("correct");
+//           playerDos();
+//             }
+//             correctAnswer.innerText = "Wrong! Try again!"
 //
+//             console.log("you fuck");
+//             playerOne -= 1;
+//             console.log(playerOne);
+// }
+// }
 // }
 
-console.log(collectGuess);
+
+
+
 
 
  // if (playerOne && playerTwo >= 1) {

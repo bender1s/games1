@@ -1,23 +1,23 @@
 
 //Math formula game
 
-var playerOne = 10;
-var playerTwo = 10;
-var turn = true;
-var arr = [];
+// var playerOne = 10;
+// var playerTwo = 10;
+// var turn = true;
+// var arr = [];
 
 // This creates random numbered array- plugs into formula -spits out result
-function randomizer () {
-for (var i = 0, t = 10; i < 3; i++) {
-  arr.push(Math.round(Math.random()* t))
-  console.log(arr);
-}
-function formula(a, b, c) {
-  answer =  a * b + c;
-}
-formula(arr[0], arr[1], arr[2]);
-  console.log(answer);
-};
+// function randomizer () {
+// for (var i = 0, t = 10; i < 3; i++) {
+//   arr.push(Math.round(Math.random()* t))
+//   console.log(arr);
+// }
+// function formula(a, b, c) {
+//   answer =  a * b + c;
+// }
+// formula(arr[0], arr[1], arr[2]);
+//   console.log(answer);
+// };
 
 // function rounds() {
  if (turn == true) {
