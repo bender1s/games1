@@ -3,9 +3,19 @@ var arr = [];
 var answer = [];
 var playerOne = 10;
 var playerTwo = 10;
-//var value = [];
+var turn = true;
 var collectGuess = [];
   console.log(collectGuess);
+
+// function checkGame() {
+//    if (playerOne && playerTwo >= 1) {
+//
+//     } else if (playerOne === 0) {
+//       console.log("Player 2 wins!");
+//       } else {
+//        console.log("player 1 wins!");
+//       }
+//   }
 
 document.getElementById('player-tag').addEventListener('click', function(event){
    start();
@@ -14,7 +24,7 @@ document.getElementById('player-tag').addEventListener('click', function(event){
 document.getElementById("select").addEventListener("keyup", function(event) {
     event.preventDefault();
       if (event.keyCode == 13) {
-        //console.log(this.value);
+
         collectGuess = parseInt(this.value);
         this.value = '';
     }
@@ -43,13 +53,6 @@ function clickListenOne () {
     });
 }
 
-function clickListenTwo () {
-  document.getElementById('user-input').addEventListener('keyup', function (e) {
-    if (event.keyCode == 13) {
-      nextstepTwo();
-      }
-    })
-}
 
 var playerChange = document.getElementById('player-tag');
 var formulaChange = document.getElementById('formula');
@@ -65,6 +68,7 @@ function start() {
 
 
 function playerUno(){
+  console.log("Player 1 Turn");
   console.log("User Guessed: " + collectGuess);
   collectGuess = document.getElementById('user-input').value;
   randomizer(0, 10);
@@ -80,6 +84,7 @@ function nextstepOne () {
   if (answer[0] === collectGuess) {
     console.log("correct");
     refresh();
+    turn = false;
     playerDos();
     return;
   } else {
@@ -91,9 +96,8 @@ function nextstepOne () {
     }
 }
 
-
-
 function playerDos(){
+  console.log("Player 2 turn");
   console.log("User Guessed: " + collectGuess);
   collectGuess = document.getElementById('user-input').value;
   randomizer(0, 10);
@@ -106,11 +110,14 @@ function playerDos(){
 }
 
 function nextstepTwo () {
+
   if (answer[0] === collectGuess) {
     console.log("correct");
     refresh();
-    playerUno();
     return;
+    turn = true;
+    playerUno();
+
   } else  {
       console.log("Wrong");
       playerTwo -= 1;
