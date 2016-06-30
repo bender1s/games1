@@ -14,12 +14,11 @@ document.getElementById('player-tag').addEventListener('click', function(event){
 document.getElementById("select").addEventListener("keyup", function(event) {
     event.preventDefault();
       if (event.keyCode == 13) {
-        console.log(this.value);
+        //console.log(this.value);
         collectGuess = parseInt(this.value);
         this.value = '';
     }
 });
-
 
 function refresh () {
   arr = [];
@@ -31,6 +30,7 @@ function randomizer(min, max) {
     arr.push(Math.floor(Math.random() * (max - min + 1)) + min);
   }
 }
+
 function formula(a, b, c) {
   answer.push(a * b + c);
 }
@@ -40,7 +40,7 @@ function clickListenOne () {
     if (event.keyCode == 13) {
       nextstepOne();
       }
-    })
+    });
 }
 
 function clickListenTwo () {
@@ -65,58 +65,59 @@ function start() {
 
 
 function playerUno(){
-  console.log(collectGuess);
+  console.log("User Guessed: " + collectGuess);
   collectGuess = document.getElementById('user-input').value;
-  console.log(collectGuess);
   randomizer(0, 10);
   formula(arr[0], arr[1], arr[2]);
-  console.log(answer);
+  console.log("Correct Answer is: " + answer);
   playerChange.innerText = "Player 1 Turn";
   formulaChange.innerText = `${arr[0]} x ${arr[1]} + ${arr[2]}`;
  clickListenOne();
+ return;
 }
 
-    function nextstepOne () {
-        if (answer[0] === collectGuess) {
-          console.log("correct");
-          refresh();
-          playerDos();
-          return;
-        } else {
-            console.log("Wrong");
-            playerOne -= 1;
-            console.log(playerOne);
-            playerOneScore.innerText = playerOne;
-            return;
-           }
+function nextstepOne () {
+  if (answer[0] === collectGuess) {
+    console.log("correct");
+    refresh();
+    playerDos();
+    return;
+  } else {
+      console.log("Wrong");
+      playerOne -= 1;
+      console.log("Player 1 score is: " + playerOne );
+      playerOneScore.innerText = playerOne;
+      return;
+    }
 }
 
 
 
 function playerDos(){
-  console.log(collectGuess);
+  console.log("User Guessed: " + collectGuess);
   collectGuess = document.getElementById('user-input').value;
-  console.log(collectGuess);
   randomizer(0, 10);
   formula(arr[0], arr[1], arr[2]);
-  console.log(answer);
+  console.log("Correct Answer is: " + answer);
   playerChange.innerText = "Player 2 Turn";
   formulaChange.innerText = `${arr[0]} x ${arr[1]} + ${arr[2]}`;
   clickListenTwo();
+  return;
 }
 
 function nextstepTwo () {
-    if (answer[0] === collectGuess) {
-      console.log("correct");
-      refresh();
-      playerUno();
+  if (answer[0] === collectGuess) {
+    console.log("correct");
+    refresh();
+    playerUno();
+    return;
+  } else  {
+      console.log("Wrong");
+      playerTwo -= 1;
+      console.log("Player 2 score is: " + playerTwo );
+      playerTwoScore.innerText = playerTwo;
       return;
-    } else  {
-        console.log("Wrong");
-        playerTwo -= 1;
-        playerTwoScore.innerText = playerTwo;
-        return;
-      }
+    }
 }
 
 
