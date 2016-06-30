@@ -3,10 +3,9 @@ var arr = [];
 var answer = [];
 var playerOne = 10;
 var playerTwo = 10;
-//var turn = true;
+//var value = [];
 var collectGuess = [];
   console.log(collectGuess);
-
 
 document.getElementById('player-tag').addEventListener('click', function(event){
    start();
@@ -39,14 +38,9 @@ function formula(a, b, c) {
 function clickListenOne () {
   document.getElementById('user-input').addEventListener('keyup', function (e) {
     if (event.keyCode == 13) {
-      //if (turn == true) {
-        //playerUno();
-      //}  else if (turn = false) {
-          //playerDos();
-        }
       nextstepOne();
-
-  });
+      }
+    });
 }
 
 function clickListenTwo () {
@@ -71,7 +65,6 @@ function start() {
 
 
 function playerUno(){
-  console.log("Player 1 Turn");
   console.log("User Guessed: " + collectGuess);
   collectGuess = document.getElementById('user-input').value;
   randomizer(0, 10);
@@ -88,8 +81,6 @@ function nextstepOne () {
     console.log("correct");
     refresh();
     playerDos();
-  //turn = false;
-    console.log(turn);
     return;
   } else {
       console.log("Wrong");
@@ -100,8 +91,9 @@ function nextstepOne () {
     }
 }
 
+
+
 function playerDos(){
-  console.log("Player 2 turn");
   console.log("User Guessed: " + collectGuess);
   collectGuess = document.getElementById('user-input').value;
   randomizer(0, 10);
@@ -114,12 +106,11 @@ function playerDos(){
 }
 
 function nextstepTwo () {
-
   if (answer[0] === collectGuess) {
     console.log("correct");
     refresh();
-    return;
     playerUno();
+    return;
   } else  {
       console.log("Wrong");
       playerTwo -= 1;
