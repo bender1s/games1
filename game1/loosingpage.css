@@ -1,0 +1,31 @@
+footer {
+  color: rgba(255, 91, 64, 1);
+  font-size: 100px;
+  font-weight: bold;
+  text-shadow: 1px 1px black;
+  text-align: center;
+}
+
+img title {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  color: rgba(255, 91, 64, 1);
+  font-size: 100px;
+  font-weight: bold;
+  text-shadow: 1px 1px black;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: -webkit-radial-gradient(rgba(194, 255, 245, .75), rgba(14, 100, 153, .75));
+  background: -o-radial-gradient(rgba(194, 255, 245, .75), rgba(14, 100, 153, .75));
+  background: -moz-radial-gradient(rgba(194, 255, 245, .75), rgba(14, 100, 153, .75));
+}
+img {
+  border: 5px solid rgba(204, 135, 135, 0.75);
+  border-radius: 5px;
+}
